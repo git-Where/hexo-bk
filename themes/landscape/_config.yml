@@ -1,9 +1,9 @@
 # Header
 menu:
-  Home: /
-  Archives: /archives
-  About: /about
-  Contact: /contact
+  首页: /
+  档案: /archives
+  关于我: /about
+  联系我: /contact
 rss: /atom.xml
 
 # Content
