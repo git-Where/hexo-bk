@@ -24,12 +24,12 @@
     
     <main id="main" class="main">
 
-      <div class="main-inner">
         <div class="headband">
           <div class="headband-inner">
             <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=340 height=86 src="//music.163.com/outchain/player?type=2&id=26090155&auto=1&height=66"></iframe>
           </div>
         </div>
+      <div class="main-inner">
         <div class="content-wrap">
           <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
             <div class="header-inner"> {%- include '_partials/header.swig' %} </div>
