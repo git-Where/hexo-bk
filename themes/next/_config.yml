@@ -83,6 +83,23 @@ index_with_subtitle: false
 
 
 # ---------------------------------------------------------------
+# gitalk评论 Settings
+# ---------------------------------------------------------------
+gitalk:
+  enable: true  #启用gitalk
+  githubID: git-Where  #github帐号 例：CodeHaotian
+  # id: location.pathname  #此设置参照下文常见问题说明
+  repo: hexo-gitalk  #存放评论的仓库名称
+  clientID: 00753205cc8ca458afd9  #application的id，即上文Client ID
+  clientSecret: 9393742627170e48de78a1a73f81e60f52e7a4c3 #application的密码，即上文Client Secret
+  adminUser: git-Where #页面显示联系**初始化评论 例：CodeHaotian
+  distractionFreeMode: true # Facebook-like distraction free mode
+  # Gitalk's display language depends on user's browser or system environment
+  # If you want everyone visiting your site to see a uniform language, you can set a force language value
+  # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
+  language: zh-CN
+
+# ---------------------------------------------------------------
 # Menu Settings 
 # ---------------------------------------------------------------
 
