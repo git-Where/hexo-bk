@@ -2,7 +2,7 @@
 
 {% set html_class = 'theme-next ' + theme.scheme %}
 {% if theme.motion.enable %}
-  {% set html_class = html_class + ' use-motion' %}
+  {% set html_class = html_class + ' use--motion' %}
 {% endif %}
 
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">

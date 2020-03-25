@@ -18,9 +18,8 @@ $ hexo new "文件名称"
 ```
 
 更多信息: [hexo_Docs](https://hexo.io/docs/writing.html)
-
-### 开启服务（热更新）
 <!--more-->
+### 开启服务（热更新）
 ``` bash
 $ hexo server/hexo s
 ```
