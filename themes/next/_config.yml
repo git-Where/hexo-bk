@@ -580,6 +580,10 @@ busuanzi_count:
   page_pv_header: <i class="fa fa-file-o"></i>
   page_pv_footer:
 
+# 鼠标点击效果
+cursor_effect:
+  enabled: true
+  type: love  # explosion：爆炸 | love：浮出爱心 | fireworks：礼花 | text：浮出文字
 
 # Tencent analytics ID
 # tencent_analytics:

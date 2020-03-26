@@ -1,6 +1,6 @@
 ---
 title: 浏览器兼容性问题解决方案 · 总结
-date: 2019-10-14 15:08:18
+date: 2018-10-14 15:08:18
 tags:
 - 浏览器兼容
 - 问题总结
@@ -103,6 +103,110 @@ categories: 前端-跨浏览器兼容总结篇
   #### 浏览器兼容问题十二：两个块级元素，父元素设置了overflow:auto；子元素设置了position:relative ;且高度大于父元素，在IE6、IE7会被隐藏而不是溢出；
   解决方案：父级元素设置position:relative
 
+  #### 浏览器兼容问题十三：web标准中设置IE浏览器滚动条颜色
+  解决方案：
+  ```
+  <style type="text/css"> 
+    html{ scrollbar-face-color:#f6f6f6; scrollbar-highlight-color:#fff; scrollbar-shadow-color:#eeeeee; scrollbar-3dlight-color:#eeeeee; scrollbar-arrow-color:#000; scrollbar-track-color:#fff; scrollbar-darkshadow-color:#fff;}
+  </style>
+  ```
+
+  #### 浏览器兼容问题十四：firefox浏览器中嵌套div标签的居中问题的解决方法
+  假如有如下情况：
+  ```
+  <div id="a"> 
+    <div id="b"> </div> 
+  </div>
+  ```
+  如果要实现b在a中居中放置，一般只需用CSS设置a的text-align属性为center。这样的方法在IE里看起来一切正常；但是在Firefox中b却会是居左的。
+  解决方案：设置b的横向margin为auto。例如设置b的CSS样式为：margin: 0 auto;
+
+  #### 浏览器兼容问题十五：透明png图片会带背景色
+  问题根源：在ie6下透明的png图片会带一个背景色
+  解决方案：
+  ```
+  div{
+    background-image: url(icon_home.png);/* 其他浏览器 */
+    background-repeat: no-repeat;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='icon_home.png');/* IE6 */
+    _background-image: none; /* IE6 */
+  }
+  ```
+
+  #### 浏览器兼容问题十六：td自动换行的问题
+  问题根源：Table宽度固定，td自动换行
+  解决方案：设置Table的table-layout:fixed，td的word-wrap:break-word
+
+  #### 浏览器兼容问题十七：ul浮动后，margin变大
+  问题根源：ul设置 float后，在ie中margin将变大
+  解决方案：设置ul的display:inline，li的list-style-position:outside
+
+  #### 浏览器兼容问题十八：li浮动后，margin变大
+  问题根源：li设置 float后，在ie中margin将变大
+  解决方案：设置li的display:inline
+
+  #### 浏览器兼容问题十九：嵌套使用ul、li的问题
+  问题根源：ie的bug，嵌套使用ul、li时，里层的li设置float以后，外层li不设置float, 里面的ul顶部和它外面的li总是有一段间距
+  解决方案：设置里面的ul的zoom:1
+
+  #### 浏览器兼容问题二十：IE6 列表背景颜色失效的问题
+  问题根源：当父元素设置position:relative;时，在ie6中第一个ul、ol、dl的背景颜色失效
+  解决方案：ul、ol、dl 都设置为position:relative;
+
+  #### 浏览器兼容问题二十一：IE6-7 列表背景颜色失效的问题2
+  问题根源：做横向导航栏时，ul设置为float且有背景色，li设置为float。ie6-7背景颜色失效
+  解决方案：很多ie的bug都可以通过触发layout来解决 ul添加属性
+  ```
+    height:1%;
+    float:left;
+    zoom:1;
+  ```
+
+  #### 浏览器兼容问题二十二：li中的内容以省略号显示
+  问题根源：li中内容超过长度时，想以省略号显示， 此方法适用于ie6-7-8、opera、safari浏览器、ff浏览器不支持
+  解决方案：
+  ```
+    li{
+      width:200px;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      -o-text-overflow:ellipsis; 
+      overflow: hidden;
+    }
+  ```
+
+  #### 浏览器兼容问题二十三：禁用中文输入法的问题
+  问题根源：不能在输入框中输入汉字
+  解决方案：
+  只在ie系列和ff中有效
+  ```
+  ime-mode:disabled    (但可以粘贴)
+  ```
+  禁用粘贴：
+  ```
+  οnpaste="return false"
+  ```
+
+  #### 浏览器兼容问题二十四：除去滚动条的问题
+  问题根源：隐藏滚动条
+  解决方案：只有ie6-7支持<bodyscroll="no">
+  除ie6-7不支持 body{overflow:hidden}
+  所有浏览器 html{overflow:hidden}
+
+  #### 浏览器兼容问题二十五：css滤镜的问题
+  问题根源：css滤镜只在ie中有效，Firefox, Safari(WebKit), Opera只能够设置透明，它们不支持滤镜filter，无法实现图片切换中间变换的效果，只能通过透明度来设置。
+  解决方案：ff中设置透明度-moz-opacity:0.10; opacity:0.6;ie中只设置filter:alpha(opacity=50); 时，ie6-7失效，还要设置zoom:1;  2、width:100%;
+
+  #### 浏览器兼容问题二十六：解决 Placeholder在IE下显示的问题
+  问题根源：Placeholder在IE下无法显示
+  解决方案：
+  ```
+  <input type="text" value="Name *" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name *';}">
+  ```
+
+
+
   ---
   做兼容页面的方法时：每写一小段代码（布局中的一行或者一块）我们都要在不同的浏览器中看是否兼容，当然熟练到一定的程度就没这么麻烦了。建议经常会碰到兼容性问题的新手使用。很多兼容性问题都是因为浏览器对标签的默认属性解析不同造成的，只要我们稍加设置都能轻松地解决这些兼容问题。如果我们熟悉标签的默认属性的话，就能很好的理解为什么会出现兼容问题以及怎么去解决这些兼容问题。
   实战是解决问题的最佳途径，也是遇到问题的唯一途径，大家多多亲自制作才能更快更好的成长，另外多去借鉴别人的经验也是进步的捷径。
+   

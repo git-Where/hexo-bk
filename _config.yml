@@ -75,11 +75,15 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
+# style
 theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+# 把编译后的静态访问文件集成到地址上  coding-国内 github-国外
 deploy:
   type: git
-  repository: https://github.com/git-Where/hexo_blog.git
+  repo:
+    coding: https://e.coding.net/yeqs/hexo_blog.git
+    # github: https://github.com/git-Where/hexo_blog.git
   branch: master
