@@ -9,6 +9,10 @@ categories: 前端-关于hexo
 
 欢迎来到[Hexo](https://hexo.io/)! 这是一篇由构建-->发布到github上的实践操作步骤. 查看[文档](https://hexo.io/docs/)了解更多信息. 如果你在使用hexo时遇到任何问题, 币可以在[故障排除中](https://hexo.io/docs/troubleshooting.html)找到答案，或者你可以在[GitHub](https://github.com/git-Where/hexo-bk/issues)上问我.
 
+---
+
+<!--more-->
+
 ## Quick Start
 
 ### 建立新文件
@@ -18,7 +22,7 @@ $ hexo new "文件名称"
 ```
 
 更多信息: [hexo_Docs](https://hexo.io/docs/writing.html)
-<!--more-->
+
 ### 开启服务（热更新）
 ``` bash
 $ hexo server/hexo s
@@ -50,3 +54,7 @@ EG:
 ``` bash
 $ npm install
 ```
+
+## 结语
+
+>以上都是自己个人的总结，表达能力有限，书写过程如有错误欢迎指正，也请点赞评论鼓励.

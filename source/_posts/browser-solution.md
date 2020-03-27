@@ -10,6 +10,7 @@ categories: 前端-跨浏览器兼容总结篇
   
   ---
 
+  <!--more-->
   #### 浏览器兼容问题一：不同浏览器的标签默认的margin和padding不同
   问题根源：页面上随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。
   遇到几率：100%
@@ -19,7 +20,7 @@ categories: 前端-跨浏览器兼容总结篇
   ```
   body,h1,h2,h3,ul,li,input,div,span,a,form …… { margin:0; padding:0; } OR *{margin:0; padding:0;}
   ```
-<!--more-->
+
   #### 浏览器兼容问题二：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大
   问题根源：常见问题是IE6中后面的一块被顶到下一行
   遇到几率：85%以上(稍微复杂点的页面都会碰到，float布局最常见的浏览器兼容问题)
@@ -105,9 +106,17 @@ categories: 前端-跨浏览器兼容总结篇
 
   #### 浏览器兼容问题十三：web标准中设置IE浏览器滚动条颜色
   解决方案：
-  ```
+  ```bash
   <style type="text/css"> 
-    html{ scrollbar-face-color:#f6f6f6; scrollbar-highlight-color:#fff; scrollbar-shadow-color:#eeeeee; scrollbar-3dlight-color:#eeeeee; scrollbar-arrow-color:#000; scrollbar-track-color:#fff; scrollbar-darkshadow-color:#fff;}
+    html{ 
+      scrollbar-face-color:#f6f6f6; 
+      scrollbar-highlight-color:#fff; 
+      scrollbar-shadow-color:#eeeeee; 
+      scrollbar-3dlight-color:#eeeeee; 
+      scrollbar-arrow-color:#000; 
+      scrollbar-track-color:#fff; 
+      scrollbar-darkshadow-color:#fff;
+    }
   </style>
   ```
 
@@ -203,10 +212,9 @@ categories: 前端-跨浏览器兼容总结篇
   ```
   <input type="text" value="Name *" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name *';}">
   ```
-
-
-
   ---
-  做兼容页面的方法时：每写一小段代码（布局中的一行或者一块）我们都要在不同的浏览器中看是否兼容，当然熟练到一定的程度就没这么麻烦了。建议经常会碰到兼容性问题的新手使用。很多兼容性问题都是因为浏览器对标签的默认属性解析不同造成的，只要我们稍加设置都能轻松地解决这些兼容问题。如果我们熟悉标签的默认属性的话，就能很好的理解为什么会出现兼容问题以及怎么去解决这些兼容问题。
-  实战是解决问题的最佳途径，也是遇到问题的唯一途径，大家多多亲自制作才能更快更好的成长，另外多去借鉴别人的经验也是进步的捷径。
-   
+
+  ## 结语
+
+  >做兼容页面的方法时：每写一小段代码（布局中的一行或者一块）我们都要在不同的浏览器中看是否兼容，当然熟练到一定的程度就没这么麻烦了。建议经常会碰到兼容性问题的新手使用。很多兼容性问题都是因为浏览器对标签的默认属性解析不同造成的，只要我们稍加设置都能轻松地解决这些兼容问题。如果我们熟悉标签的默认属性的话，就能很好的理解为什么会出现兼容问题以及怎么去解决这些兼容问题。
+  实战是解决问题的最佳途径，也是遇到问题的唯一途径，大家多多亲自制作才能更快更好的成长，另外多去借鉴别人的经验也是进步的捷径。以上都是自己个人的总结，表达能力有限，书写过程如有错误欢迎指正，也请点赞评论鼓励.

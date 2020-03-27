@@ -11,16 +11,16 @@ categories: 前端-小程序
   闲暇之余，来跟大家侃侃微信小程序开发中的那些事；今天要说的是基于[uniapp](https://uniapp.dcloud.io/)这款完全使用vue写法开发的微信小程序，相信大家在开发当中或多或少都会遇到一些棘手的怪异问题，下面是自己在项目实战开发当中总结出来的一些事项，希望能帮到大家。本人才疏学浅，表达能力有限，书写过程如有错误欢迎指正，也请点赞评论鼓励。
 
   ---
-
+  <!--more-->
   #### uni-app
   [uni-app官网文档](https://uniapp.dcloud.io/)
   #### 微信小程序
   [微信小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)
   ### 细节-Attention
-  <!--more-->
+
   1.字体图标的使用
   &nbsp;&nbsp;&nbsp;&nbsp;(1)使用远程地址
-  <!--more-->
+
   ```
   @font-face{
 	  font-family:"iconfont";
@@ -74,3 +74,6 @@ categories: 前端-小程序
   由setData的底层实现可知，我们的数据传输实际是一次 evaluateJavascript 脚本过程，当数据量过大时会增加脚本的编译执行时间，占用 WebView JS 线程，
   ##### 3. 后台态页面进行 setData
   当页面进入后台态（用户不可见），不应该继续去进行setData，后台态页面的渲染用户是无法感受的，另外后台态页面去setData也会抢占前台页面的执行。
+
+  ## 结语
+  >以上都是自己个人的总结，表达能力有限，书写过程如有错误欢迎指正，也请点赞评论鼓励.
