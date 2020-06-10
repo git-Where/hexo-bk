@@ -125,3 +125,44 @@ input::-ms-clear{ display:none;}
 var Time = '2018-09-12'
 Time.replace(/-/g,'/')
 ```
+## css3设置字体镂空
+```bash
+-webkit-text-fill-color:white;  -webkit-text-stroke: 2px red;
+```
+## 文本平分间距
+>设置固定宽度下，加一下两句代码：
+```bash
+text-align-last:justify;
+text-align:justify;
+```
+## 去除输入框的黄色背景
+```bash
+input:-webkit-autofill{
+    -webkit-box-shadow:0 0 0 1000px #fff inset
+}
+```
+## 移除html5上input框type="number"时的上下小箭头（pc端的也可以用）
+>在chrome下：
+```bash
+input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+```
+>在Firefox下：
+```bash
+input[type="number"]{-moz-appearance:textfield;}
+```
+>第二种方案：将type="number"改为type="tel"，同样是数字键盘，但是没有箭头。
+## 刚进入页面刷新，把某块内容置顶
+```bash
+$("html, body").scrollTop(0).animate({scrollTop: $(".ui-today").offset().top});
+```
+## Android 4.2.x 背景色溢出
+>测试发现，在 `Android 4.2.x` 系统自带浏览器中，同时设置`border-radius`，`border`和`背景色`的时候，背景色会溢出到圆角以外部分，可以使用背景剪裁`background-clip: padding-box;`来修复，但是如果border-color为半透明时，背景直角部分依然会露出来（参见图一）。
+## 结语
+
+{% note info %}
+以上都是自己的一些个人总结，表达能力有限，书写过程如有错误欢迎指正，也请点赞评论鼓励.
+{% endnote %}
