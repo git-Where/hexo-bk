@@ -27,7 +27,7 @@ if(params.success){
 #### 优雅写法
 ```js
 a = a || [];
-    
+
 params.success&&params.success(res);
 //注意事项
 1、if内不能出现var、=等赋值定义语句，才可以使用优雅写法
