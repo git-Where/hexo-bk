@@ -84,6 +84,6 @@ theme: next
 deploy:
   type: git
   repo:
-    coding: https://e.coding.net/yeqs/hexo_blog.git
-    # github: https://github.com/git-Where/hexo_blog.git
+    # coding: https://e.coding.net/yeqs/hexo_blog.git
+    github: https://github.com/git-Where/hexo_blog.git
   branch: master
